@@ -1,0 +1,69 @@
+{%include 'mainn.html'%}
+{% block body%}
+
+      </div></header> 
+    <section class="u-align-left u-clearfix u-image u-section-1" id="sec-44f4" data-image-width="1919" data-image-height="1080">
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <div class="u-expanded-width-xs u-preserve-proportions u-shape u-shape-circle u-white u-shape-1">
+          <div class="u-preserve-proportions-child" style="padding-top: 100%;"></div>
+        </div>
+        <div class="u-align-center u-container-style u-group u-shape-rectangle u-group-1">
+          <div class="u-container-layout u-valign-middle u-container-layout-1">
+            {%if session["qq"] == True%}
+
+            <h1>logged in as doctor</h1>
+            {%endif%}
+            {%if session["name"] == True%}
+
+            <h1>logged in as Student</h1>
+            {%endif%}
+
+            <h2 class="u-text u-text-1">  Academic Advising</h2>
+            <p class="u-text u-text-2">Academic Advising is a website that aims to simplify the relationship between the teacher and the student, where the student can easily communicate with his academic advisor.&nbsp;<br>
+            </p>
+            <a href="https://nicepage.site" class="u-active-white u-border-2 u-border-active-palette-1-base u-border-hover-palette-1-base u-border-palette-1-base u-btn u-btn-round u-button-style u-custom-font u-font-pt-sans u-hover-white u-palette-1-base u-radius-50 u-text-active-palette-1-base u-text-hover-palette-1-base u-btn-2">read more</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+
+    <section class="u-align-center u-clearfix u-white u-section-5" id="carousel_7d73">
+      <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
+        <h2 class="u-text u-text-default u-text-palette-1-base u-text-1">Innovative Solutions<br>
+        </h2>
+        <div class="u-expanded-width u-list u-list-1">
+          <div class="u-repeater u-repeater-1">
+            <div class="u-align-center-sm u-align-center-xs u-align-left-lg u-align-left-md u-align-left-xl u-container-style u-list-item u-repeater-item">
+              <div class="u-container-layout u-similar-container u-valign-top u-container-layout-1"><span class="u-file-icon u-icon u-icon-circle u-palette-1-base u-text-white u-icon-1"><img  src="{{url_for('static', filename='images/4361984.png')}}  " alt=""></span>
+                <h4 class="u-text u-text-2">Our Vision</h4>
+                <p class="u-text u-text-3"> The Faculty of Medicine, Fayoum University, aspires to become a pioneering and distinguished institution locally, regionally and internationally in education that meets the needs of society.</p>
+              </div>
+            </div>
+            <div class="u-align-center-sm u-align-center-xs u-align-left-lg u-align-left-md u-align-left-xl u-container-style u-list-item u-repeater-item">
+              <div class="u-container-layout u-similar-container u-valign-top u-container-layout-2"><span class="u-file-icon u-icon u-icon-circle u-palette-1-base u-text-white u-icon-2"><img src="{{url_for('static', filename='images/tar.png')}} " alt=""></span>
+                <h4 class="u-text u-text-4">Our Mession</h4>
+                <p class="u-text u-text-5"> 
+                 <b> The first goal : </b>an administrative system with strategic thinking strategic goals. <br>
+
+                  <b> The second goal: </b>an advanced educational system that keeps pace with developments strategic goals. <br>
+                 <b>The third goal:</b>an advanced research system linked to society. <br>
+                  <b> The fourth goal: </b>Strengthening the position of the college in the local community
+                </p>   
+              </div>
+            </div>
+            <div class="u-align-center-sm u-align-center-xs u-align-left-lg u-align-left-md u-align-left-xl u-container-style u-list-item u-repeater-item">
+              <div class="u-container-layout u-similar-container u-valign-top u-container-layout-3"><span class="u-file-icon u-icon u-icon-circle u-palette-1-base u-text-white u-icon-3"><img  src="{{url_for('static', filename='images/sms.png')}} " alt=""></span>
+                <h4 class="u-text u-text-6"> Our Message</h4>
+                <p class="u-text u-text-7"> The Faculty of Medicine - Fayoum University seeks to prepare distinguished doctors and researchers professionally and scientifically who are able to contribute to the development of the medical system through advanced academic programs that keep pace with developments and internationally distinguished research related to societal problems, and to provide medical services that contribute to the development of the local community within a framework of values ​​and ethics societal.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+      {%endblock%}
+    
+   
+  
+</body></html>

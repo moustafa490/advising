@@ -1,0 +1,29 @@
+{%include 'mainn.html'%}
+
+{% block body%}
+<link rel="stylesheet" href="{{url_for('static', filename='css/nav.css')}}">
+
+<table>
+  <h1> your data</h1>
+  <tr>
+      <th>name</th>
+      <th>User Name</th>
+      <th>email</th>
+      <th>Password</th>
+      <th>certificates</th>       
+    </tr>
+    
+    <tr>
+      <td>{{name}}<br><br> <a href="/dr/name/update" class="mx-1">edit</a></td>
+      <td>{{dr_username}}<br><br><a href="/dr/username/update" class="mx-1">edit</a></td>
+      <td>{{email}} <br><br><a href="#" class="mx-1">edit</a></td>
+      <td>{{password}}<br><br> <a href="/dr/password/update" class="mx-1">edit</a></td>
+      <td>{{certificates}} <br><br><a href="/dr/certificates/update" class="mx-1">edit</a></td>  
+    </tr>
+  </table> <br>
+
+
+
+
+
+{%endblock%}

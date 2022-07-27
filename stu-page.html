@@ -1,0 +1,60 @@
+
+  {%include 'mainn.html'%}
+
+  {% block body%}
+
+<h2>ADVISING SCHADULE</h2>
+<style>
+  .box{
+      border: 1px solid green;
+      margin: 30px;
+      height: max-content;
+      width: max-content;
+  }
+  .s1{
+      font-size: 1.4em;
+      width: max-content;
+      height: max-content;
+      border: 1px solid red;
+      position: absolute;
+      padding-right: 10px;
+      margin-right:10px ;
+}
+.s2{
+  margin: 0px 450px;
+  border: 1px solid rgb(0, 0, 0);
+}
+</style>
+<table>
+  <h1> your     schadule</h1>
+    <tr>
+      <th>Saturday</th>
+      <th> Sunday </th>
+      <th>Monday</th>
+      <th>Tuesday</th>
+      <th>wednesday</th>       
+      <th>thursday</th>       
+      <th>friday</th>       
+    </tr>
+    {%for doc_schedual in doc_schedual%}
+
+    <tr>
+      <th>{{doc_schedual.saturday}}<br></th>
+      <th>{{doc_schedual.sunday}}<br></th>
+      <th>{{doc_schedual.monday}}<br></th>
+      <th>{{doc_schedual.tuesday}}<br></th>
+      <th>{{doc_schedual.wednesday}}<br></th>
+      <th>{{doc_schedual.thursday}}<br></th>
+      <th>{{doc_schedual.friday}}<br></th>
+    </tr>
+    {%endfor%}
+
+  </table>
+</div>
+{%endblock%}
+
+
+
+</body>
+</html>
+

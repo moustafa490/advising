@@ -1,0 +1,31 @@
+{%include 'mainn.html'%}
+
+{% block body%}
+
+<link rel="stylesheet" href="{{url_for('static', filename='css/nav.css')}}">
+
+<table class="tabl">
+    <tr>
+        <th scope="col">#</th>
+        <th scope="col">name</th>
+        <th scope="col">problem</th>
+        <th scope="col">IS READED</th>        
+        <th scope="col">replay</th>        
+        <th scope="col">date</th>
+        <th scope="col">op</th>
+
+    </tr>
+    {%for doctor_id in doctor_id%}
+
+    <tr>
+        <th scope="row">{{loop.index}}</th>
+        <td>{{doctor_id.name}}</td>
+        <td>{{doctor_id.message}}</td>
+        <td>{{doctor_id.readed}}  <a href="/adv/{{doctor_id.id}}/updatehtml" class="mx-1">edit</a></td>
+          <td>{{doctor_id.replay}}   <a href="/adv/{{doctor_id.id}}/updatereplay" class="mx-1">edit</a></td>
+          <td>{{doctor_id.date_created.date()}}</td>
+          <td> <a href="/adv/{{doctor_id.id}}/delete" class="mx-1">delete</a></td>
+        </tr>
+    {%endfor%}
+  </table>
+  {%endblock%}

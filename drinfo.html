@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='css/nav.css')}}">
+
+</head>
+<body bgcolor="#eee">
+    
+
+    {%include 'mainn.html'%}
+
+    {% block body%}
+
+<div class="container" style="margin: auto 50;">
+    <h1 class="text-dark text-center">My stusername</h1>
+    <br>
+    <div class="row">
+        <div class="col-lg-3"></div>
+        
+    {%if stssusername|length > 0%}
+    <div style="max-height: 40vh; overflow-y: scroll;">
+    
+        <table class="tabl">
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">stusername</th>
+                <th scope="col">name</th>
+                <th scope="col">password</th>
+                <th scope="col">Date</th>
+                <th scope="col">Ops</th>
+            </tr>
+            {%for stussername in stssusername%}
+    
+            <tr>
+                <th scope="row">{{loop.index}}</th>
+                <td>{{stussername.stusername[:20]}} <a href="/stsusername/{{stussername.id}}/edit" class="mx-1">edit</a></td>
+                <td>{{stussername.name}}  <a href="/stuname/{{stussername.id}}/edit" class="mx-1">edit</a></td>
+                <td>{{stussername.password}}</td>
+                <td>{{stussername.date_created.date()}}</td>
+                <td><a href="/stsusername/{{stussername.id}}/delete">del</a></td>
+            </tr>
+            {%endfor%}
+          </table>
+    </div>
+    {%else%}
+    <div class="alert" role="alert">
+        You have no students... Try fillin some ....!
+    </div>
+    {%endif%}
+    </div>
+    <div class="col-lg-3"></div>
+    <br>
+    <br>
+    <div class="row" style="padding: auto 50;">
+        <div class="col-lg-3"></div>
+        <div class="col-lg-6">
+            <form action="/stsusername" method="POST">
+             <div class="bord">
+                <table class="tabl"> 
+                <tr>
+                    <th scope="col">Student Nickname</th>
+                    <th scope="col">Student official mail  & BN Number</th>
+                    <th scope="col">Password</th>
+                    <th scope="col">submit</th>
+                 
+                </tr>
+                <tr>
+                    <td><input type="text" placeholder="Enter student Nickname" name="stusername" required></td>
+                    <td><input type="text" placeholder="Enter Your official mail  & BN Number" name="name" required></td>
+                    <td><input type="password" placeholder="Enter Your Name" name="password" required></td>
+                    <td><button type="submit">Add student</button></td>
+                </tr>
+
+            </table>
+             </div>
+
+            </form>
+        </div>
+        
+    </div>
+</div>
+
+{%endblock%}
+
+</body>
+</html>

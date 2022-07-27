@@ -1,0 +1,45 @@
+{%include 'mainn.html'%}
+
+{% block body%}
+<link rel="stylesheet" href="{{url_for('static', filename='css/nav.css')}}">
+
+
+<table>
+  <h1> your pervios advising sessions</h1>
+    <tr>
+      <th>n.</th>
+      <th>problem</th>
+      <th>date</th>
+      <th>replay</th>
+      
+    </tr>
+    {%for advising in adv%}
+
+    <tr>
+      <td>{{loop.index}}</td>
+      <td>{{advising.message}}</td>
+      <td>{{advising.date_created}}</td>
+      <td>{{advising.replay}}</td>
+
+      
+  
+    </tr>
+    {%endfor%}
+
+  
+  <br><br><br>
+  
+    
+  
+  </table>
+  <br>
+  <form action="/new/email" method="post">
+
+    <label for="email"><b>Type your problem</b></label>
+    <input type="text" placeholder="Type your problem" name="message" required>
+  
+    <button type="submit" class="registerbtn">submit</button>
+  
+  
+    </form>
+{%endblock%}
